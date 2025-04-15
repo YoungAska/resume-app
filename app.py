@@ -101,7 +101,7 @@ if uploaded_file:
     user_question = st.text_input("Введите вопрос к ИИ")
 
     if st.button("Спросить у GPT") and user_question.strip():
-        api_key = st.secrets["openrouter"]["api_key"]
+        openai_api_key = st.secrets["openai"]["openai_api_key"]
         with st.spinner("GPT думает..."):
             ai_response = ask_gpt(f"Вот текст резюме:\n{resume_text}\n\nВопрос: {user_question}", api_key)
             st.markdown("**Ответ:**")
